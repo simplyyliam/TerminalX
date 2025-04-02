@@ -16,27 +16,11 @@ TerminalX is a **modern and playful terminal concept** designed for fun, not fun
 
 ## Commands that are in the app
 
-- help → Lists all available commands but in a cool, animated way.
+- TX help → Lists all available commands but in a cool, animated way.
 
-- about → Displays TerminalX’s backstory (you already have this).
+- Tx about → Displays TerminalX’s backstor.
 
-- clear → Clears the screen but with a cool fading animation.
-
-- exit → Closes TerminalX (or just hides it with a smooth transition).
-
-- theme dark / theme light → Switch between dark and light mode.
-
-- flip → Flips the entire terminal upside down for 5 seconds.
-
-- selfdestruct → A dramatic countdown, but nothing actually happens.
-
-- owo → Converts the entire terminal text into "OwO speak".
-
-- time → Displays the current time but in a stylish format.
-
-- 404 → Prints "Command not found, but what if it was never meant to be?"
-
-- play [lofi/chillwave/synthwave] → Starts background music if possible.
+- Tx clear → Clears the screen but with a cool fading animation.
     
 
 ## 🚀 Why TerminalX?

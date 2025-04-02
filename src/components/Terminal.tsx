@@ -1,12 +1,13 @@
 import { useState, useRef, FormEvent } from "react";
 import Titlebar from "./Titlebar";
+import { JSX } from "react/jsx-runtime";
 
 interface Props {
   maxWindow: () => void;
 }
 
 function Terminal({ maxWindow }: Props) {
-  const [terminalOutput, setTerminalOutput] = useState<string[]>([]);
+  const [terminalOutput, setTerminalOutput] = useState<(string | JSX.Element)[]>([]);
   const inputRef = useRef<HTMLInputElement | null>(null);
 
   const handleCommands = (e: FormEvent<HTMLFormElement>) => {
@@ -19,8 +20,9 @@ function Terminal({ maxWindow }: Props) {
 
     if (commands === "Tx") {
       const subCommands: Record<string, () => void> = {
-        About: () => setTerminalOutput((prev) => [...prev, About()]),
-        Clear: () => setTerminalOutput([]),
+        about: () => setTerminalOutput((prev) => [...prev, <About/>]),
+        help: () => setTerminalOutput((prev) => [...prev, <Help/>]),
+        clear: () => setTerminalOutput([]),
       };
       const action = subCommands[args[1]];
       if (action) {
@@ -32,7 +34,7 @@ function Terminal({ maxWindow }: Props) {
         ]);
       }
     } else {
-      setTerminalOutput((prev) => [...prev, `Unknown Command: ${commands}`]);
+      setTerminalOutput((prev) => [...prev, `Unknown Command: ${commands} type: Tx help for all the commands.`]);
     }
     if (inputRef.current) {
       inputRef.current.value = "";
@@ -68,6 +70,19 @@ function Terminal({ maxWindow }: Props) {
   
       <span>--------------------------</span>
     </div>
+    );
+  }
+
+  function Help () {
+    return (
+      <div className="flex flex-col gap-3">
+        <h1 className="text-terminal1">TerminalX Commands</h1>
+        <span>--------------------------</span>
+        <ul className="flex flex-col gap-2">
+          <li> - Tx about</li>
+          <li> - Tx clear</li>
+        </ul>
+      </div>
     );
   }
 
