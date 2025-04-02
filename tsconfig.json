@@ -3,8 +3,5 @@
   "references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
-  ],
-  "compilerOptions": {
-    "noEmitOnError": false
-  } //remove this in future builds. These 2 lines ensures that types are bypassed by vercel
+  ]
 }
