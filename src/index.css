@@ -4,10 +4,27 @@
 
 @theme{
     --font-Roboto: "Roboto Mono", monospace;
+    --color-terminal1: #6666FF;
+    --color-terminal2: #129BF6;
 }
+
+
+@layer utilities {
+    .scrollbar-hide {
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+  }
 
 .shadow {
     box-shadow: 0px 4px 10px 1px #01010150;
+}
+
+.Tx-Shadow {
+  box-shadow: 0px 4px 70px 12px #01010180;
 }
 
 input::placeholder {
